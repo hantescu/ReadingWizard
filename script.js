@@ -16,8 +16,10 @@ var inputFrecventa = "#i_wpm";
 
 // output
 var outputText = "#o_display";
-var culoareOutput1 = "black"
+var culoareOutput1 = "black";
 var culoareOutput2 = "red";
+var culoareOutput3 = "yellow";
+var culoareOutput4 = "blue";
 
 console.log($(inputTextbox).text());
 
@@ -25,7 +27,7 @@ function wordsPerMinute(frecventa){
 	return (60 / frecventa) * 1000 ;
 }
 
-function splitText(inputText){
+function splitText(inputText) {
 	textArray = inputText.split(" ");
 }
 
@@ -83,7 +85,12 @@ function timer(index){
   }
     setTimeout(function(){
     console.log(index);
-    $(outputText).css("color", culoareOutput2).text(index);
+    if(index == 3)
+    	$(outputText).css("color", culoareOutput4).text(index);
+    else if(index == 2)
+    	$(outputText).css("color", culoareOutput3).text(index);
+    else
+    	$(outputText).css("color", culoareOutput2).text(index);
     timer(index - 1);
   }, 1000);
 }
