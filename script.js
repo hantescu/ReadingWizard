@@ -23,7 +23,7 @@ var culoareOutput4 = "blue";
 
 console.log($(inputTextbox).text());
 
-function wordsPerMinute(frecventa){
+function wordsPerMinute(frecventa) {
 	return (60 / frecventa) * 1000 ;
 }
 
@@ -31,22 +31,22 @@ function splitText(inputText) {
 	textArray = inputText.split(" ");
 }
 
-function pauseRead(){
+function pauseRead() {
   flag = false;
   delayTrue();
 }
 
-function changeStateToTrue(){
+function changeStateToTrue() {
   flag = true;
 }
 
-function delayTrue(){
+function delayTrue() {
   setTimeout(function(){
     changeStateToTrue()
   }, 1000);
 }
 
-function stopRead(){
+function stopRead() {
   // flagPlay = false;
   flag = false;
   currentPoz = 0;
@@ -57,17 +57,17 @@ function stopRead(){
   }, 900)
 }
 
-function clearText(){
+function clearText() {
   $(inputTextbox).val("");
   $(outputText).html("&nbsp;");
 }
 
-function afiseazaCuvant(cuvant){
+function afiseazaCuvant(cuvant) {
 	console.log(cuvant);
 $(outputText).css("color", culoareOutput1).text(cuvant);
 }
 
-function startRead (){
+function startRead () {
   if (flag == false || currentPoz >= textArray.length){
     return;
  }
@@ -94,7 +94,7 @@ function writeCountdown(index) {
     	writeWithColor(culoareOutput2, "Error, invalid index number");
 }
 
-function timer(index){
+function timer(index) {
   if(index == 0 || currentPoz > 0){
     return;
   }
@@ -105,11 +105,11 @@ function timer(index){
   }, 1000);
 }
 
-function setColor(culoare){
+function setColor(culoare) {
   $(outputText).css("color", culoare).text(" ");
 }
 
-function selectTimp(){
+function selectTimp() {
   if(currentPoz > 0){
     timpPauza = 0
   }else{
@@ -117,7 +117,7 @@ function selectTimp(){
   }
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
       $(buttonPlay).click(function()
            {
             // flagPlay = true;
