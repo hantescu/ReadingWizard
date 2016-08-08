@@ -79,18 +79,28 @@ function startRead (){
  }, wordsPerMinute($(inputFrecventa).val()) );
 }
 
+function writeWithColor(culoare, text) {
+	$(outputText).css("color", culoare).text(text);
+}
+
+function writeCountdown(index) {
+	if(index == 3)
+    	writeWithColor(culoareOutput4, index);
+    else if(index == 2)
+    	writeWithColor(culoareOutput3, index);
+    else if(index == 1)
+    	writeWithColor(culoareOutput2, index);
+    else
+    	writeWithColor(culoareOutput2, "Error, invalid index number");
+}
+
 function timer(index){
   if(index == 0 || currentPoz > 0){
     return;
   }
     setTimeout(function(){
     console.log(index);
-    if(index == 3)
-    	$(outputText).css("color", culoareOutput4).text(index);
-    else if(index == 2)
-    	$(outputText).css("color", culoareOutput3).text(index);
-    else
-    	$(outputText).css("color", culoareOutput2).text(index);
+	writeCountdown(index);
     timer(index - 1);
   }, 1000);
 }
