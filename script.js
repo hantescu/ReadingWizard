@@ -90,8 +90,6 @@ function writeCountdown(index) {
     	writeWithColor(culoareOutput3, index);
     else if(index == 1)
     	writeWithColor(culoareOutput2, index);
-    else
-    	writeWithColor(culoareOutput2, "Error, invalid index number");
 }
 
 function timer(index) {
